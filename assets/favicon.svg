@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5B8"/>
+      <stop offset="50%" stop-color="#C9A45C"/>
+      <stop offset="100%" stop-color="#99732B"/>
+    </linearGradient>
+    <linearGradient id="favBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#123F63"/>
+      <stop offset="100%" stop-color="#071B2C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="#071B2C"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" stroke="url(#favGold)" stroke-width="1.5" fill="none"/>
+
+  <!-- Crown -->
+  <path d="M 23 18 L 27 23 L 32 16 L 37 23 L 41 18 L 39 26 L 25 26 Z" fill="url(#favGold)"/>
+  <circle cx="23" cy="17" r="1.2" fill="#F3E5B8"/>
+  <circle cx="32" cy="15" r="1.4" fill="#F3E5B8"/>
+  <circle cx="41" cy="17" r="1.2" fill="#F3E5B8"/>
+
+  <!-- Shield -->
+  <path d="M 32 25 C 44 25 46 31 46 41 C 46 51 32 60 32 60 C 32 60 18 51 18 41 C 18 31 20 25 32 25 Z" 
+        fill="url(#favBlue)" stroke="url(#favGold)" stroke-width="1.5"/>
+
+  <!-- Pharmaceutical Flask in Shield -->
+  <path d="M 30 33 L 34 33 L 34 37 L 39 47 C 40 48.5 38.5 50 36 50 L 28 50 C 25.5 50 24 48.5 25 47 L 30 37 Z" 
+        fill="#0B2942" stroke="url(#favGold)" stroke-width="1.2"/>
+  
+  <path d="M 27 44 C 29 42 34 45 37 44 L 38 47 C 38 48.5 37 49 36 49 L 28 49 C 27 49 26 48.5 26 47 Z" 
+        fill="url(#favGold)"/>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 90" fill="none">
+  <defs>
+    <!-- Rich Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E7BD"/>
+      <stop offset="45%" stop-color="#D2A660"/>
+      <stop offset="100%" stop-color="#A97E33"/>
+    </linearGradient>
+
+    <!-- Deep Royal Navy Gradient -->
+    <linearGradient id="shieldBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#143A5E"/>
+      <stop offset="100%" stop-color="#081E33"/>
+    </linearGradient>
+
+    <!-- Subtle Glow Shadow -->
+    <filter id="shieldShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- EMBLEM ICON (Left) -->
+  <g transform="translate(6, 6)" filter="url(#shieldShadow)">
+    <!-- Laurel Wreath Left -->
+    <path d="M 20 62 C 14 52 11 38 16 26 C 17 31 20 36 22 41 C 18 47 18 54 20 62 Z" fill="url(#goldGrad)" opacity="0.9"/>
+    <path d="M 15 44 C 9 39 9 30 14 21 C 16 26 18 31 20 36 Z" fill="url(#goldGrad)" opacity="0.75"/>
+    <path d="M 11 28 C 7 21 11 14 17 10 C 17 15 17 21 16 24 Z" fill="url(#goldGrad)" opacity="0.65"/>
+
+    <!-- Laurel Wreath Right -->
+    <path d="M 58 62 C 64 52 67 38 62 26 C 61 31 58 36 56 41 C 60 47 60 54 58 62 Z" fill="url(#goldGrad)" opacity="0.9"/>
+    <path d="M 63 44 C 69 39 69 30 64 21 C 62 26 60 31 58 36 Z" fill="url(#goldGrad)" opacity="0.75"/>
+    <path d="M 67 28 C 71 21 67 14 61 10 C 61 15 61 21 62 24 Z" fill="url(#goldGrad)" opacity="0.65"/>
+
+    <!-- Crown on top -->
+    <path d="M 29 16 L 33 21 L 39 14 L 45 21 L 49 16 L 47 24 L 31 24 Z" fill="url(#goldGrad)"/>
+    <circle cx="29" cy="15" r="1.3" fill="#F7E7BD"/>
+    <circle cx="39" cy="13" r="1.6" fill="#F7E7BD"/>
+    <circle cx="49" cy="15" r="1.3" fill="#F7E7BD"/>
+
+    <!-- Outer Shield Border -->
+    <path d="M 39 24 C 52 24 55 31 55 43 C 55 55 39 67 39 67 C 39 67 23 55 23 43 C 23 31 26 24 39 24 Z" 
+          fill="url(#shieldBlue)" stroke="url(#goldGrad)" stroke-width="1.8"/>
+
+    <!-- Inner Shield Inset -->
+    <path d="M 39 27 C 49 27 52 33 52 42 C 52 52 39 62 39 62 C 39 62 26 52 26 42 C 26 33 29 27 39 27 Z" 
+          fill="none" stroke="#D2A660" stroke-width="0.7" stroke-dasharray="2 1.5" opacity="0.6"/>
+
+    <!-- Molecular Hexagon Node behind Flask -->
+    <polygon points="39,33 45,36.5 45,43.5 39,47 33,43.5 33,36.5" fill="none" stroke="#F4E8CB" stroke-width="0.9" opacity="0.5"/>
+    <circle cx="45" cy="36.5" r="1.2" fill="#D2A660"/>
+    <circle cx="33" cy="36.5" r="1.2" fill="#D2A660"/>
+
+    <!-- Pharmaceutical Flask in Shield Center -->
+    <path d="M 37 34 L 41 34 L 41 39 L 46 51 C 47 53 45.5 55 43 55 L 35 55 C 32.5 55 31 53 32 51 L 37 39 Z" 
+          fill="#0B2942" stroke="url(#goldGrad)" stroke-width="1.3"/>
+    
+    <!-- Liquid in Flask -->
+    <path d="M 34 46 C 36.5 44 41.5 48 44 46 L 45 50.5 C 45 52 43.5 53.5 42 53.5 L 36 53.5 C 34.5 53.5 33 52 33 50.5 Z" 
+          fill="url(#goldGrad)" opacity="0.9"/>
+
+    <line x1="36" y1="34" x2="42" y2="34" stroke="url(#goldGrad)" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- BRAND NAME TYPOGRAPHY (Ultra Clean Modern Sans-Serif) -->
+  <g transform="translate(90, 0)">
+    <!-- "ROYAL BEST" -->
+    <text x="0" y="40" 
+          font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" 
+          font-size="24" 
+          font-weight="600" 
+          letter-spacing="2.5" 
+          fill="#0B2942">ROYAL BEST</text>
+
+    <!-- Subtle Gold Divider -->
+    <line x1="0" y1="48" x2="270" y2="48" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.85"/>
+
+    <!-- "PHARMACEUTICALS PVT. LTD." -->
+    <text x="1" y="63" 
+          font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" 
+          font-size="9" 
+          font-weight="600" 
+          letter-spacing="3.2" 
+          fill="#D2A660">PHARMACEUTICALS PVT. LTD.</text>
+
+    <!-- Subtitle / Business Nature -->
+    <text x="1" y="75" 
+          font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" 
+          font-size="7.5" 
+          font-weight="600" 
+          letter-spacing="1.6" 
+          fill="#6B7C8C">APIs • INTERMEDIATES • MICROBIOLOGY</text>
+  </g>
+</svg>
