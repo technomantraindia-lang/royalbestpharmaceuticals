@@ -8753,5 +8753,235 @@ button, input, select, textarea {
   }
 }
 
+/* ==========================================================================
+   GLOBAL INITIAL ENTRANCE & SCROLL REVEAL ANIMATION SYSTEM
+   ========================================================================== */
+
+/* 1. Keyframes */
+@keyframes pageEntranceFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageEntranceFadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageEntranceScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pageEntranceFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 2. Hero & Above-The-Fold Initial Entrance Animations */
+.page-hero,
+.inner-hero,
+.hero-slider-wrapper {
+  overflow: hidden;
+}
+
+.page-hero .eyebrow,
+.inner-hero .eyebrow,
+.page-hero-eyebrow,
+.page-hero .hero-badge {
+  animation: pageEntranceFadeDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.page-hero .hero-title,
+.inner-hero .hero-title,
+.page-hero-title {
+  animation: pageEntranceFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.page-hero .hero-subtitle,
+.inner-hero .hero-subtitle,
+.page-hero-desc {
+  animation: pageEntranceFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+
+.page-hero .hero-actions,
+.inner-hero .hero-actions,
+.page-hero-actions,
+.page-hero-badge-group,
+.breadcrumb-nav {
+  animation: pageEntranceFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
+}
+
+.category-tabs-bar {
+  animation: pageEntranceFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+/* 3. Visual Showcase Initial Entrance */
+.page-visual-showcase {
+  animation: pageEntranceScale 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.visual-image-frame {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.visual-image-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 31, 63, 0.14);
+}
+
+.visual-image-badge {
+  animation: pageEntranceFadeDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+/* 4. Universal Scroll Reveal Animation Classes */
+[data-reveal],
+.reveal-item,
+.section-title,
+.section-subtitle,
+.facility-photo-card,
+.category-card,
+.product-item-card,
+.spec-table-card,
+.compliance-matrix-card,
+.stat-item,
+.metric-card,
+.accreditation-card,
+.contact-card,
+.contact-form-wrapper,
+.cmo-facility-card,
+.trust-badge-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger-delay, 0ms));
+  will-change: opacity, transform;
+}
+
+/* Scale variant */
+[data-reveal="scale"],
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93) translateY(18px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger-delay, 0ms));
+  will-change: opacity, transform;
+}
+
+/* Left slide variant */
+[data-reveal="left"],
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger-delay, 0ms));
+  will-change: opacity, transform;
+}
+
+/* Right slide variant */
+[data-reveal="right"],
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger-delay, 0ms));
+  will-change: opacity, transform;
+}
+
+/* Revealed State */
+.is-revealed,
+.revealed {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* 5. Smooth Micro-Interactions on Interactive Elements */
+.facility-photo-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.facility-photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 31, 63, 0.12), 0 4px 12px rgba(210, 166, 96, 0.15);
+  border-color: rgba(210, 166, 96, 0.4);
+}
+
+.facility-photo-thumb img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.facility-photo-card:hover .facility-photo-thumb img {
+  transform: scale(1.06);
+}
+
+.spec-table-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spec-table-card:hover {
+  box-shadow: 0 18px 42px rgba(0, 31, 63, 0.1);
+}
+
+.cat-tab-btn {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-tab-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
 
 

@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   init3DGlobe();
   initCatalogDownloadCTA();
+  initScrollReveal();
 });
 
 /* --------------------------------------------------------------------------
@@ -1799,6 +1800,82 @@ function init3DGlobe() {
     renderer.setSize(width, height);
   }
   window.addEventListener('resize', onWindowResize);
+}
+
+/* --------------------------------------------------------------------------
+   15. Global Section Scroll Reveal & Micro-Animation Engine
+   -------------------------------------------------------------------------- */
+function initScrollReveal() {
+  const revealSelectors = [
+    '.section-header',
+    '.section-title',
+    '.section-subtitle',
+    '.eyebrow',
+    '.facility-photo-card',
+    '.category-card',
+    '.product-item-card',
+    '.spec-table-card',
+    '.compliance-matrix-card',
+    '.stat-item',
+    '.metric-card',
+    '.accreditation-card',
+    '.contact-card',
+    '.contact-form-wrapper',
+    '.cmo-facility-card',
+    '.trust-badge-item',
+    '.feature-card',
+    '.timeline-card',
+    '.cta-banner',
+    '[data-reveal]'
+  ];
+
+  const elements = document.querySelectorAll(revealSelectors.join(', '));
+  if (!elements.length) return;
+
+  // Compute staggered delay within parent containers (grids, flex rows)
+  const containerGroups = document.querySelectorAll(
+    '.facility-gallery-grid, .category-grid, .products-grid, .stats-grid, .footer-trust-grid, .footer-top-grid, .compliance-grid, .cmo-units-grid'
+  );
+
+  containerGroups.forEach((group) => {
+    const children = group.children;
+    Array.from(children).forEach((child, index) => {
+      child.style.setProperty('--stagger-delay', `${index * 85}ms`);
+    });
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback if IntersectionObserver is not supported
+    elements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.08
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  elements.forEach(el => {
+    // If element is already in viewport on load, reveal with smooth delay
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setTimeout(() => {
+        el.classList.add('is-revealed');
+      }, 50);
+    } else {
+      revealObserver.observe(el);
+    }
+  });
 }
 
 
