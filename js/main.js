@@ -1806,54 +1806,34 @@ function init3DGlobe() {
    15. Global Section Scroll Reveal & Micro-Animation Engine
    -------------------------------------------------------------------------- */
 function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) return;
+
   const revealSelectors = [
-    '.section-header',
-    '.section-title',
-    '.section-subtitle',
-    '.eyebrow',
     '.facility-photo-card',
-    '.category-card',
-    '.product-item-card',
-    '.spec-table-card',
     '.compliance-matrix-card',
-    '.stat-item',
-    '.metric-card',
-    '.accreditation-card',
-    '.contact-card',
-    '.contact-form-wrapper',
-    '.cmo-facility-card',
     '.trust-badge-item',
-    '.feature-card',
-    '.timeline-card',
-    '.cta-banner',
+    '.accreditation-card',
     '[data-reveal]'
   ];
 
   const elements = document.querySelectorAll(revealSelectors.join(', '));
   if (!elements.length) return;
 
-  // Compute staggered delay within parent containers (grids, flex rows)
+  // Stagger inside parent grids
   const containerGroups = document.querySelectorAll(
-    '.facility-gallery-grid, .category-grid, .products-grid, .stats-grid, .footer-trust-grid, .footer-top-grid, .compliance-grid, .cmo-units-grid'
+    '.facility-gallery-grid, .compliance-grid, .footer-trust-grid, .cmo-units-grid'
   );
 
   containerGroups.forEach((group) => {
-    const children = group.children;
-    Array.from(children).forEach((child, index) => {
-      child.style.setProperty('--stagger-delay', `${index * 85}ms`);
+    Array.from(group.children).forEach((child, index) => {
+      child.style.setProperty('--stagger-delay', `${index * 80}ms`);
     });
   });
 
-  if (!('IntersectionObserver' in window)) {
-    // Fallback if IntersectionObserver is not supported
-    elements.forEach(el => el.classList.add('is-revealed'));
-    return;
-  }
-
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.08
+    rootMargin: '0px 0px -30px 0px',
+    threshold: 0.05
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -1866,13 +1846,10 @@ function initScrollReveal() {
   }, observerOptions);
 
   elements.forEach(el => {
-    // If element is already in viewport on load, reveal with smooth delay
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setTimeout(() => {
-        el.classList.add('is-revealed');
-      }, 50);
-    } else {
+    // Only apply reveal animation if element is below initial viewport fold
+    if (rect.top >= window.innerHeight - 50) {
+      el.classList.add('reveal-on-scroll');
       revealObserver.observe(el);
     }
   });
