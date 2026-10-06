@@ -23,7 +23,7 @@
 <body>
 
   <!-- ==========================================================================
-       1. TOP UTILITY BAR
+       1. TOP UTILITY BAR (Clean, Unified Pharma Header)
        ========================================================================== -->
   <div class="top-utility-bar">
     <div class="container topbar-wrapper">
@@ -41,7 +41,7 @@
           </svg>
           <a href="tel:+919638169289">+91 96381 69289</a>
         </div>
-        <div class="topbar-item">
+        <div class="topbar-item topbar-item-email">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
@@ -51,8 +51,25 @@
       </div>
 
       <div class="topbar-right">
-        <span class="compliance-badge"><span class="pulse-indicator"></span> WHO-GMP Standard</span>
-        <span class="compliance-badge"><span class="pulse-indicator"></span> Global B2B Supply</span>
+        <div class="topbar-compliance-item" title="FDCA Gujarat Drug Licence No. (Form 20B & 21B)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          <span>Drug Lic: <strong>GJ-VAL-270384 &bull; 270385</strong></span>
+        </div>
+        <div class="topbar-compliance-item">
+          <span class="pulse-indicator"></span>
+          <span>WHO-GMP Certified</span>
+        </div>
+        <a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank" class="topbar-catalog-btn" title="Download Official Master Catalog PDF">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Catalog (PDF)</span>
+        </a>
       </div>
     </div>
   </div>
@@ -96,6 +113,24 @@
                     </div>
                   </div>
                   <span class="item-count">180+ Items</span>
+                </a>
+              </li>
+              <li class="dropdown-item">
+                <a href="steroids.html">
+                  <div class="dd-item-left">
+                    <div class="dd-icon-box">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                        <polyline points="2 17 12 22 22 17"/>
+                        <polyline points="2 12 12 17 22 12"/>
+                      </svg>
+                    </div>
+                    <div class="dd-item-text">
+                      <div class="dd-title">Steroids &amp; Corticosteroids</div>
+                      <div class="dd-desc">Betamethasone, Dexamethasone &amp; more</div>
+                    </div>
+                  </div>
+                  <span class="item-count">30+ Items</span>
                 </a>
               </li>
               <li class="dropdown-item">
@@ -165,6 +200,7 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item"><a href="contract-manufacturing.html" class="nav-link">Contract Manufacturing</a></li>
           <li class="nav-item"><a href="quality.html" class="nav-link">Quality</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link active">Resources</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -195,7 +231,7 @@
       <div class="eyebrow light">DOWNLOADS &amp; DOCUMENTATION</div>
       <h1 class="page-hero-title">Technical Resources, PDF Catalogues &amp; Guides</h1>
       <p class="page-hero-desc">
-        Access official product directories with CAS numbers, regulatory dossier request forms, packaging specifications, and international export guidelines.
+        Access official product directories with CAS numbers, HSN codes, regulatory dossier request forms, contract manufacturing profiles, and international export guidelines.
       </p>
       <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
@@ -206,21 +242,158 @@
   </section>
 
   <main>
+    <!-- Visual Showcase Frame -->
+    <div class="container" style="margin-top: 36px; margin-bottom: 20px;">
+      <div class="page-visual-showcase">
+        <div class="visual-image-frame">
+          <img src="assets/images/regulatory-dossier-tech.jpg" alt="Regulatory Documentation & Technical Dossier Repository" class="visual-img">
+          <div class="visual-image-badge">
+            <span class="badge-dot"></span>
+            <span>WHO-GMP &bull; DMF Ready Technical Documentation</span>
+          </div>
+        </div>
+        <div class="visual-content-frame">
+          <div class="eyebrow">REGULATORY &amp; COMPLIANCE REPOSITORY</div>
+          <h2 class="visual-title">Technical Documentation &amp; Pharmacopoeial Files</h2>
+          <p class="visual-desc">
+            Access verified Certificate of Analysis (COA) templates, Material Safety Data Sheets (MSDS), Drug Master Files (DMF) open-part declarations, and comprehensive product matrices for seamless regulatory filings across international health authorities.
+          </p>
+          <div class="visual-highlights">
+            <div class="visual-highlight-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Batch-Specific COA &amp; Method of Analysis (MOA)</span>
+            </div>
+            <div class="visual-highlight-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              <span>Instant Downloadable Master Catalogues &amp; CAS Directory</span>
+            </div>
+            <div class="visual-highlight-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <span>B2B Logistics, Container Planning &amp; Custom Packaging Specs</span>
+            </div>
+          </div>
+          <div class="visual-action-btns">
+            <a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank" class="btn btn-gold btn-sm">
+              <span>Download Master PDF</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+            <a href="#procurement-guidelines" class="btn btn-outline-dark btn-sm">
+              <span>Procurement Guidelines</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ==========================================================================
          SECTION 1: OFFICIAL PDF CATALOGUE DOWNLOADS
          ========================================================================== -->
-    <section class="inner-page-section bg-white">
+    <section class="inner-page-section bg-white" id="catalogues">
       <div class="container">
         <div style="text-align: center; max-width: 720px; margin: 0 auto 36px auto;">
           <div class="eyebrow">OFFICIAL PUBLICATIONS</div>
           <h2 class="section-title">Download Product Catalogues</h2>
           <p class="section-subtitle" style="margin-bottom: 0;">
-            Download our latest official technical brochures and product lists in PDF format for offline review and procurement planning.
+            Download our latest official technical brochures and master product lists in PDF format for offline review and procurement planning.
           </p>
         </div>
 
-        <div class="downloads-grid">
-          <!-- Download Card 1 -->
+        <div class="downloads-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <!-- Download Card 1: API Catalog with Categories (New PDF) -->
+          <div class="download-card" style="border: 2px solid var(--gold);">
+            <div>
+              <div class="download-card-top">
+                <div class="pdf-icon-box" style="background: var(--gold); color: #071B2C;">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="download-title">API Catalogue with Therapeutic Categories</h3>
+                  <div class="download-meta" style="color: var(--gold); font-weight: 700;">★ Official 2026 Release &bull; 5-Page A–Z Index</div>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--body-text); line-height: 1.6; margin-bottom: 18px;">
+                Complete Active Pharmaceutical Ingredients (APIs) catalog classified by therapeutic indication: Antibiotics, Cardiovascular, Gastrointestinal, Analgesics, CNS, Antidiabetics, and Antifungals with verified CAS numbers.
+              </p>
+            </div>
+            <a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20API%20Catalog%20with%20Categories%20(1).pdf" target="_blank" class="btn btn-gold" style="width: 100%;">
+              <span>Download API Catalog with Categories (PDF)</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Download Card 2: Section IV Catalog (R to Z) (New PDF) -->
+          <div class="download-card">
+            <div>
+              <div class="download-card-top">
+                <div class="pdf-icon-box">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="download-title">Section IV Catalog (Range: R – Z)</h3>
+                  <div class="download-meta">PDF Technical Supplement &bull; R to Z APIs</div>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--body-text); line-height: 1.6; margin-bottom: 18px;">
+                Specialty Active Pharmaceutical Ingredients catalog covering molecules from R to Z including Risperidone, Rivaroxaban, Rosuvastatin, Telmisartan, Valsartan, Zolpidem, and Zinc Bacitracin.
+              </p>
+            </div>
+            <a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20Section%20IV%20Catalog%20(R%20to%20Z).pdf" target="_blank" class="btn btn-gold" style="width: 100%;">
+              <span>Download Section IV (R to Z) (PDF)</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Download Card 3: Master Catalog -->
+          <div class="download-card">
+            <div>
+              <div class="download-card-top">
+                <div class="pdf-icon-box">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="download-title">Master Product Catalogue (DGB Edition)</h3>
+                  <div class="download-meta">Full Portfolio &bull; Intermediates &amp; Media</div>
+                </div>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--body-text); line-height: 1.6; margin-bottom: 18px;">
+                Complete Master Catalog containing Active APIs, Steroids, Key Intermediates (7-ACA, 6-APA, OTBN, BCFI), Sterile Bulk Compounds, and Ready-to-Use Culture Media Plates with HSN &amp; CAS references.
+              </p>
+            </div>
+            <a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank" class="btn btn-outline-dark" style="width: 100%;">
+              <span>Download Master Catalog (PDF)</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Download Card 4: CAS Technical Catalog -->
           <div class="download-card">
             <div>
               <div class="download-card-top">
@@ -234,15 +407,15 @@
                 </div>
                 <div>
                   <h3 class="download-title">Product Catalog with CAS Numbers</h3>
-                  <div class="download-meta">PDF Document &bull; Official 2026 Edition</div>
+                  <div class="download-meta">PDF Technical Matrix &bull; CAS Index</div>
                 </div>
               </div>
               <p style="font-size: 0.88rem; color: var(--body-text); line-height: 1.6; margin-bottom: 18px;">
-                Complete Active Pharmaceutical Ingredients (APIs) catalogue listing chemical CAS numbers, pharmacopoeial grades (USP/BP/EP/IP), and therapeutic indications.
+                Complete Active Pharmaceutical Ingredients (APIs) catalogue listing chemical CAS numbers, pharmacopoeial grades (USP/BP/EP/IP), molecular structures, and therapeutic indications.
               </p>
             </div>
-            <a href="pdfs/Royal%20Best%20Pharmaceuticals%20Product%20Catalog%20with%20CAS%20Numbers%20(1).pdf" target="_blank" class="btn btn-gold" style="width: 100%;">
-              <span>Download PDF Catalogue</span>
+            <a href="pdfs/Royal%20Best%20Pharmaceuticals%20Product%20Catalog%20with%20CAS%20Numbers%20(1).pdf" target="_blank" class="btn btn-outline-dark" style="width: 100%;">
+              <span>Download CAS Technical Catalog (PDF)</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
@@ -251,33 +424,28 @@
             </a>
           </div>
 
-          <!-- Download Card 2 -->
+          <!-- Download Card 5: Contract Manufacturing Brochure -->
           <div class="download-card">
             <div>
               <div class="download-card-top">
                 <div class="pdf-icon-box">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="download-title">Product List: Intermediates &amp; Media Plates</h3>
-                  <div class="download-meta">PDF Document &bull; Intermediates &amp; Microbiology</div>
+                  <h3 class="download-title">Contract Manufacturing Capabilities Profile</h3>
+                  <div class="download-meta">WHO-GMP CMO &bull; Baddi &amp; Maharashtra</div>
                 </div>
               </div>
               <p style="font-size: 0.88rem; color: var(--body-text); line-height: 1.6; margin-bottom: 18px;">
-                Specialized product index for chemical intermediates, sterile bulk compounds, and ready-to-use culture media plates (SCDA, SDA, RODAC).
+                Comprehensive guide to our third-party formulation manufacturing facilities in Baddi (HP) and Maharashtra: Tablets, Capsules, Injectables (SVP/LVP), Ointments, and Liquid Orals.
               </p>
             </div>
-            <a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank" class="btn btn-gold" style="width: 100%;">
-              <span>Download PDF List</span>
+            <a href="contract-manufacturing.html" class="btn btn-outline-dark" style="width: 100%;">
+              <span>View CMO Capabilities</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
           </div>
@@ -288,7 +456,7 @@
     <!-- ==========================================================================
          SECTION 2: B2B PROCUREMENT & EXPORT GUIDE
          ========================================================================== -->
-    <section class="inner-page-section bg-light">
+    <section class="inner-page-section bg-light" id="procurement-guidelines">
       <div class="container">
         <div style="text-align: center; max-width: 720px; margin: 0 auto 36px auto;">
           <div class="eyebrow">GLOBAL COMMERCIAL LOGISTICS</div>
@@ -335,6 +503,54 @@
             <p class="value-desc">
               Double poly-lined HDPE/Fibre drums with tamper-evident security seals, desiccants, and cold-chain temperature loggers for temperature-sensitive sterile actives.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facility & Documentation Infrastructure Photo Gallery -->
+    <section class="facility-gallery-section">
+      <div class="container">
+        <div class="facility-gallery-header">
+          <div class="eyebrow">SUPPLY CHAIN &amp; TECHNICAL INFRASTRUCTURE</div>
+          <h2 class="section-title">Documentation &amp; Global Fulfillment Capabilities</h2>
+          <p class="section-subtitle">
+            Take a visual tour of our quality verification laboratories, climate-controlled warehousing, and GMP-certified dispatch operations.
+          </p>
+        </div>
+
+        <div class="facility-gallery-grid">
+          <div class="facility-photo-card">
+            <div class="facility-photo-thumb">
+              <img src="assets/images/pharmacopoeia-compendial.jpg" alt="Official Pharmacopoeia Compendial References USP BP EP IP" loading="lazy">
+              <span class="facility-photo-tag">Compendial Standard</span>
+            </div>
+            <div class="facility-photo-body">
+              <h3 class="facility-photo-title">COA &amp; Purity Testing</h3>
+              <p class="facility-photo-desc">Every batch is tested to verify pharmacopoeial specifications (USP/BP/EP/IP) with complete Certificate of Analysis and analytical method validation.</p>
+            </div>
+          </div>
+
+          <div class="facility-photo-card">
+            <div class="facility-photo-thumb">
+              <img src="assets/images/global-export-shipping.jpg" alt="Seaport Export Container Shipping and Reefer Logistics" loading="lazy">
+              <span class="facility-photo-tag">Seaport Export</span>
+            </div>
+            <div class="facility-photo-body">
+              <h3 class="facility-photo-title">Export Containers &amp; Port Dispatch</h3>
+              <p class="facility-photo-desc">FCL and LCL shipments packed in UN-certified tamper-evident drums, staged in temperature-monitored refrigerated reefers for rapid JNPT seaport transit.</p>
+            </div>
+          </div>
+
+          <div class="facility-photo-card">
+            <div class="facility-photo-thumb">
+              <img src="assets/images/synthesis-facility.jpg" alt="cGMP Manufacturing Reactor Line" loading="lazy">
+              <span class="facility-photo-tag">Synthesis Scale</span>
+            </div>
+            <div class="facility-photo-body">
+              <h3 class="facility-photo-title">Audited Production Facilities</h3>
+              <p class="facility-photo-desc">Contract manufacturing facilities in Baddi &amp; Maharashtra with multi-kilo to multi-ton reactors for steady commercial supply.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -438,7 +654,7 @@
             </a>
             
             <p class="footer-brand-p">
-              Premier manufacturer and trusted B2B partner providing certified high-purity Active Pharmaceutical Ingredients (APIs), key intermediates, sterile parenteral compounds, and microbiology media to pharmaceutical plants worldwide.
+              Premier API Trader, Exporter and Global Sourcing Partner providing certified high-purity Active Pharmaceutical Ingredients (APIs), Corticosteroids, key intermediates, sterile parenteral compounds, and contract formulation manufacturing alliances in Baddi (HP) &amp; Maharashtra.
             </p>
 
             <div class="footer-badges-row">
@@ -446,6 +662,7 @@
               <span class="footer-badge"><span class="footer-badge-dot"></span> ISO 9001:2015</span>
               <span class="footer-badge"><span class="footer-badge-dot"></span> DMF Ready</span>
               <span class="footer-badge"><span class="footer-badge-dot"></span> COA &amp; MSDS</span>
+              <span class="footer-badge"><span class="footer-badge-dot"></span> Export Quality</span>
             </div>
           </div>
 
@@ -457,9 +674,11 @@
             </h4>
             <ul class="footer-col-links">
               <li><a href="apis.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Active APIs (180+)</a></li>
+              <li><a href="steroids.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Steroids &amp; Corticosteroids</a></li>
               <li><a href="intermediates.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Pharma Intermediates &amp; KSMs</a></li>
               <li><a href="sterile-products.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Sterile Compounds &amp; Vials</a></li>
               <li><a href="culture-media.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Microbiology Culture Media</a></li>
+              <li><a href="contract-manufacturing.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Contract Manufacturing</a></li>
               <li><a href="products.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>All Product Portfolios</a></li>
             </ul>
           </div>
@@ -472,9 +691,9 @@
             </h4>
             <ul class="footer-col-links">
               <li><a href="about.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>About Our Company</a></li>
+              <li><a href="contract-manufacturing.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Third-Party Manufacturing</a></li>
               <li><a href="quality.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Quality Assurance &amp; QC</a></li>
               <li><a href="quality.html#compliance"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>DMF Regulatory Support</a></li>
-              <li><a href="about.html#facility"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Vapi Manufacturing Facility</a></li>
               <li><a href="contact.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Contact Corporate Office</a></li>
             </ul>
           </div>
@@ -487,10 +706,10 @@
             </h4>
             <ul class="footer-col-links">
               <li><a href="resources.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Download Catalogues</a></li>
-              <li><a href="pdfs/Royal%20Best%20Pharmaceuticals%20Product%20Catalog%20with%20CAS%20Numbers%20(1).pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Complete Catalog (PDF)</a></li>
-              <li><a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Intermediates &amp; Media List</a></li>
+              <li><a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20API%20Catalog%20with%20Categories%20(1).pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>API Catalog with Categories (PDF)</a></li>
+              <li><a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Master Catalog (PDF)</a></li>
+              <li><a href="pdfs/Royal%20Best%20Pharmaceuticals%20Product%20Catalog%20with%20CAS%20Numbers%20(1).pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>CAS Technical Catalog (PDF)</a></li>
               <li><a href="#" data-open-quote><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Request COA / Price Quote</a></li>
-              <li><a href="quality.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Pharmacopoeial Compliance</a></li>
             </ul>
           </div>
 
@@ -543,6 +762,20 @@
                   <a href="mailto:info@royalbestpharmaceutical.in" class="contact-link alt-email">info@royalbestpharmaceutical.in</a>
                 </div>
               </div>
+
+              <!-- Drug Licence Item -->
+              <div class="footer-contact-row">
+                <div class="footer-contact-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="m9 12 2 2 4-4"/>
+                  </svg>
+                </div>
+                <div class="footer-contact-details">
+                  <span class="contact-label">Drug Licence No. (FDCA Gujarat)</span>
+                  <p class="contact-text"><strong>20B:</strong> GJ-VAL-270384 &nbsp;|&nbsp; <strong>21B:</strong> GJ-VAL-270385</p>
+                </div>
+              </div>
             </div>
 
             <button type="button" class="footer-rfq-quick-btn" data-open-quote>
@@ -561,7 +794,7 @@
     <div class="footer-bottom-bar">
       <div class="container footer-bottom-container">
         <div class="footer-copy-text">
-          &copy; 2026 <strong>Royal Best Pharmaceuticals Pvt. Ltd.</strong> All Rights Reserved. WHO-GMP &amp; ISO 9001:2015 Certified.
+          &copy; 2026 <strong>Royal Best Pharmaceuticals Pvt. Ltd.</strong> All Rights Reserved. &bull; WHO-GMP &amp; ISO 9001:2015 Certified.
         </div>
         <div class="footer-bottom-links">
           <a href="about.html">Privacy Policy</a>
@@ -630,5 +863,28 @@
   <!-- Scripts -->
   <script src="js/products-data.js"></script>
   <script src="js/main.js"></script>
+  <!-- Floating Contact Actions: Call (Left) & WhatsApp (Right) - Icon Only -->
+  <div class="floating-contact-actions" aria-label="Quick Contact Actions">
+    <!-- 1. Left: Call Button -->
+    <a href="tel:+919638169289" class="floating-btn floating-call-btn" id="floatingCallBtn" aria-label="Call Royal Best Pharmaceuticals" title="Call Now: +91 96381 69289">
+      <div class="floating-pulse-ring"></div>
+      <span class="floating-btn-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- 2. Right: WhatsApp Button (Official Standard Vector) -->
+    <a href="https://wa.me/919638169289?text=Hello%20Royal%20Best%20Pharmaceuticals%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" target="_blank" rel="noopener noreferrer" class="floating-btn floating-whatsapp-btn" id="floatingWhatsAppBtn" aria-label="Chat on WhatsApp" title="Chat on WhatsApp: +91 96381 69289">
+      <div class="floating-pulse-ring"></div>
+      <span class="floating-btn-icon">
+        <svg width="30" height="30" viewBox="0 0 448 512" fill="#FFFFFF" aria-hidden="true">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+
 </body>
 </html>

@@ -3,15 +3,27 @@
  * Interactive Controller Matching Design Mockup
  */
 
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbarScroll();
   initMobileNav();
   initCatalogueCarousel();
+  initCategoryDataTables();
   initStatCounters();
   initModalSystem();
   initFilterPills();
   initHeroSlider();
   init3DGlobe();
+  initCatalogDownloadCTA();
 });
 
 /* --------------------------------------------------------------------------
@@ -52,7 +64,7 @@ function initMobileNav() {
     // Close when clicking a regular navigation link or dropdown item on mobile
     navMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 992) {
           navMenu.classList.remove('active');
         }
       });
@@ -88,22 +100,28 @@ function initCatalogueCarousel() {
     const counts = {
       all: FEATURED_PRODUCTS.length,
       apis: FEATURED_PRODUCTS.filter(p => p.category === 'apis').length,
+      steroids: FEATURED_PRODUCTS.filter(p => p.category === 'steroids').length,
       intermediates: FEATURED_PRODUCTS.filter(p => p.category === 'intermediates').length,
       sterile: FEATURED_PRODUCTS.filter(p => p.category === 'sterile').length,
-      'culture-media': FEATURED_PRODUCTS.filter(p => p.category === 'culture-media').length
+      'culture-media': FEATURED_PRODUCTS.filter(p => p.category === 'culture-media').length,
+      excipients: FEATURED_PRODUCTS.filter(p => p.category === 'excipients').length
     };
 
     const bAll = document.getElementById('badgeAll');
     const bApis = document.getElementById('badgeApis');
+    const bSteroids = document.getElementById('badgeSteroids');
     const bInter = document.getElementById('badgeInter');
     const bSterile = document.getElementById('badgeSterile');
     const bMedia = document.getElementById('badgeMedia');
+    const bExcip = document.getElementById('badgeExcip');
 
     if (bAll) bAll.textContent = counts.all;
     if (bApis) bApis.textContent = counts.apis;
+    if (bSteroids) bSteroids.textContent = counts.steroids;
     if (bInter) bInter.textContent = counts.intermediates;
     if (bSterile) bSterile.textContent = counts.sterile;
     if (bMedia) bMedia.textContent = counts['culture-media'];
+    if (bExcip) bExcip.textContent = counts.excipients;
   }
 
   function getItemsPerPage() {
@@ -113,14 +131,17 @@ function initCatalogueCarousel() {
   }
 
   function getFilteredProducts() {
+    const q = (currentSearch || '').trim().toLowerCase();
     return FEATURED_PRODUCTS.filter((item) => {
       const matchCat = currentCategory === 'all' || item.category === currentCategory;
       const matchQuery =
-        !currentSearch ||
-        item.name.toLowerCase().includes(currentSearch) ||
-        item.cas.toLowerCase().includes(currentSearch) ||
-        item.therapeutic.toLowerCase().includes(currentSearch) ||
-        item.grade.toLowerCase().includes(currentSearch);
+        !q ||
+        (item.name && item.name.toLowerCase().includes(q)) ||
+        (item.cas && item.cas.toLowerCase().includes(q)) ||
+        (item.hsn && item.hsn.toLowerCase().includes(q)) ||
+        (item.therapeutic && item.therapeutic.toLowerCase().includes(q)) ||
+        (item.grade && item.grade.toLowerCase().includes(q)) ||
+        (item.categoryLabel && item.categoryLabel.toLowerCase().includes(q));
 
       return matchCat && matchQuery;
     });
@@ -166,13 +187,6 @@ function initCatalogueCarousel() {
     } else {
       grid.style.transform = 'translateX(0px)';
     }
-
-    // Update active dot
-    if (dotsContainer) {
-      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === carouselIndex);
-      });
-    }
   }
 
   function renderCarousel() {
@@ -203,11 +217,10 @@ function initCatalogueCarousel() {
             </svg>
           </div>
           <h3 class="empty-title">No matching pharmaceutical products found</h3>
-          <p class="empty-desc">We couldn't find any products matching "<strong>${escapeHtml(currentSearch)}</strong>". Try searching by CAS number, generic name, or explore our full portfolio.</p>
+          <p class="empty-desc">We couldn't find any products matching "<strong>${escapeHtml(currentSearch)}</strong>". Try searching by Chemical Name, CAS number (e.g. 103-90-2), or HSN code (e.g. 29372200).</p>
           <button class="btn btn-gold btn-sm" onclick="resetCatalogFilters()">Reset Search &amp; View All</button>
         </div>
       `;
-      if (dotsContainer) dotsContainer.innerHTML = '';
       if (prevBtn) prevBtn.style.display = 'none';
       if (nextBtn) nextBtn.style.display = 'none';
       return;
@@ -235,34 +248,18 @@ function initCatalogueCarousel() {
       });
     });
 
-    // Render dynamic dots
-    const totalPages = getTotalPages(filtered.length);
-    if (dotsContainer) {
-      let dotsHtml = '';
-      for (let p = 0; p < totalPages; p++) {
-        dotsHtml += `<span class="carousel-dot ${p === carouselIndex ? 'active' : ''}" data-page="${p}" aria-label="Page ${p + 1}"></span>`;
-      }
-      dotsContainer.innerHTML = dotsHtml;
-
-      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot) => {
-        dot.addEventListener('click', () => {
-          carouselIndex = parseInt(dot.dataset.page, 10);
-          updateSlidePosition(true);
-          restartAutoPlay();
-        });
-      });
-    }
-
     // Set position without animation on initial load / filter change
     updateSlidePosition(false);
   }
 
   function getCategoryTitle(cat) {
     const titles = {
-      apis: 'Active APIs',
-      intermediates: 'Intermediates',
-      sterile: 'Sterile Compounds',
-      'culture-media': 'Culture Media'
+      apis: 'Active APIs (180+)',
+      steroids: 'Steroidal APIs & Corticosteroids',
+      intermediates: 'Intermediates & KSMs',
+      sterile: 'Sterile Compounds (50+)',
+      'culture-media': 'Culture Media Plates',
+      excipients: 'Specialty Excipients'
     };
     return titles[cat] || cat;
   }
@@ -270,26 +267,33 @@ function initCatalogueCarousel() {
   function renderProductCard(prod) {
     const catClasses = {
       apis: 'pill-api',
+      steroids: 'pill-steroid',
       intermediates: 'pill-inter',
       sterile: 'pill-sterile',
-      'culture-media': 'pill-media'
+      'culture-media': 'pill-media',
+      excipients: 'pill-excip'
     };
     const pillClass = catClasses[prod.category] || 'pill-api';
-    const isMedia = prod.category === 'culture-media';
 
     return `
       <article class="product-item-card" data-category="${prod.category}">
         <div class="product-card-top-bar">
-          <span class="prod-cas-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            </svg>
-            <span>CAS: ${prod.cas}</span>
-          </span>
           <span class="prod-category-pill ${pillClass}">
             ${prod.categoryLabel}
           </span>
+          <span class="prod-status-pill">
+            <span class="pulse-indicator"></span> Certified
+          </span>
+        </div>
+
+        <div class="product-card-id-bar">
+          <span class="prod-cas-badge">
+            <span class="id-label">CAS:</span> <span class="id-num">${prod.cas}</span>
+          </span>
+          ${prod.hsn ? `
+          <span class="prod-hsn-badge">
+            <span class="id-label">HSN:</span> <span class="id-num">${prod.hsn}</span>
+          </span>` : ''}
         </div>
 
         <div class="product-card-head">
@@ -302,12 +306,9 @@ function initCatalogueCarousel() {
           </div>
         </div>
 
-        <div class="chem-structure-canvas">
-          <span class="chem-canvas-watermark">${isMedia ? 'Plating Media' : '2D Structure'}</span>
-          <div class="chem-svg-wrap">
-            ${prod.structureSvg}
-          </div>
-        </div>
+        <p class="prod-card-mini-desc" style="font-size: 0.82rem; color: var(--body-text); line-height: 1.5; margin: 10px 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+          ${escapeHtml(prod.description)}
+        </p>
 
         <div class="product-specs-list">
           <div class="spec-row-item">
@@ -329,13 +330,11 @@ function initCatalogueCarousel() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
               <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
             </svg>
-            <span>Specs</span>
+            <span>Specs &amp; COA</span>
           </button>
           <button class="btn btn-card-enquire" data-action="enquire" data-name="${escapeHtml(prod.name)}" data-cas="${escapeHtml(prod.cas)}">
-            <span>Enquire RFQ</span>
+            <span>Instant RFQ</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -499,6 +498,334 @@ function initFilterPills() {
         initCatalogueCarousel();
       }
     });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   2b. Category Data Tables Engine (Dynamic Full Matrix with Search, Therapeutic Filter & Pagination)
+   -------------------------------------------------------------------------- */
+function initCategoryDataTables() {
+  const tableContainers = document.querySelectorAll('[data-category-table]');
+  if (!tableContainers.length || typeof FEATURED_PRODUCTS === 'undefined') return;
+
+  tableContainers.forEach((container) => {
+    const category = container.getAttribute('data-category-table');
+    const searchInput = container.querySelector('.table-search-input') || document.getElementById(`${category}SearchInput`);
+    const clearBtn = container.querySelector('.table-search-clear') || document.getElementById(`${category}ClearBtn`);
+    const countBadge = container.querySelector('.table-count-badge') || document.getElementById(`${category}CountBadge`);
+    const tbody = container.querySelector('tbody') || document.getElementById(`${category}TableBody`);
+
+    if (!tbody) return;
+
+    const categoryProducts = FEATURED_PRODUCTS.filter((p) => category === 'all' || p.category === category);
+    let searchQuery = '';
+    let therapeuticFilter = 'all';
+    let currentPage = 1;
+    let pageSize = 10; // Default: 10 items per page for clean, compact height
+
+    // Create or find pagination footer bar
+    let paginationBar = container.querySelector('.table-pagination-bar');
+    if (!paginationBar) {
+      paginationBar = document.createElement('div');
+      paginationBar.className = 'table-pagination-bar';
+      container.appendChild(paginationBar);
+    }
+
+    // Therapeutic filter pills handler
+    const filterPills = document.querySelectorAll(`[data-therapeutic-filter]`);
+    filterPills.forEach((pill) => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        filterPills.forEach((p) => p.classList.remove('active'));
+        pill.classList.add('active');
+        therapeuticFilter = pill.getAttribute('data-therapeutic-filter') || 'all';
+        currentPage = 1;
+        renderRows(true);
+      });
+    });
+
+    // Expose global helper for matrix cards
+    window.filterByTherapeuticCategory = (categoryKeyword) => {
+      therapeuticFilter = categoryKeyword || 'all';
+      filterPills.forEach((p) => {
+        const val = p.getAttribute('data-therapeutic-filter');
+        p.classList.toggle('active', val === therapeuticFilter);
+      });
+      currentPage = 1;
+      renderRows(true);
+      const targetTable = container || document.querySelector('.spec-table-card');
+      if (targetTable) {
+        targetTable.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    function renderPagination(totalFiltered) {
+      if (!paginationBar) return;
+
+      if (totalFiltered === 0) {
+        paginationBar.style.display = 'none';
+        return;
+      }
+
+      paginationBar.style.display = 'flex';
+      const isAll = pageSize === 'all';
+      const effectivePageSize = isAll ? totalFiltered : pageSize;
+      const totalPages = isAll ? 1 : Math.max(1, Math.ceil(totalFiltered / effectivePageSize));
+
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIdx = isAll ? 0 : (currentPage - 1) * effectivePageSize;
+      const endIdx = isAll ? totalFiltered : Math.min(startIdx + effectivePageSize, totalFiltered);
+
+      // Left side: Showing X to Y of Z + Page size selector
+      let html = `
+        <div class="table-pagination-info">
+          <span>Showing <strong>${startIdx + 1}</strong>–<strong>${endIdx}</strong> of <strong>${totalFiltered}</strong> Products</span>
+          <div class="table-page-size-wrap">
+            <label for="pageSize-${category}">Show:</label>
+            <select class="table-page-size-select" id="pageSize-${category}">
+              <option value="10" ${pageSize === 10 ? 'selected' : ''}>10 / page</option>
+              <option value="20" ${pageSize === 20 ? 'selected' : ''}>20 / page</option>
+              <option value="50" ${pageSize === 50 ? 'selected' : ''}>50 / page</option>
+              <option value="all" ${pageSize === 'all' ? 'selected' : ''}>All (${totalFiltered})</option>
+            </select>
+          </div>
+        </div>
+      `;
+
+      // Right side: Pagination Navigation Buttons
+      if (totalPages > 1) {
+        html += `<div class="table-pagination-nav">`;
+        
+        // Previous Button
+        html += `
+          <button type="button" class="table-page-btn table-page-prev" ${currentPage === 1 ? 'disabled' : ''} aria-label="Previous Page">
+            &lsaquo; Prev
+          </button>
+        `;
+
+        // Page Numbers Logic
+        const pagesToShow = [];
+        if (totalPages <= 7) {
+          for (let i = 1; i <= totalPages; i++) pagesToShow.push(i);
+        } else {
+          pagesToShow.push(1);
+          if (currentPage > 3) pagesToShow.push('...');
+          
+          const start = Math.max(2, currentPage - 1);
+          const end = Math.min(totalPages - 1, currentPage + 1);
+          for (let i = start; i <= end; i++) {
+            if (!pagesToShow.includes(i)) pagesToShow.push(i);
+          }
+
+          if (currentPage < totalPages - 2) pagesToShow.push('...');
+          if (!pagesToShow.includes(totalPages)) pagesToShow.push(totalPages);
+        }
+
+        pagesToShow.forEach((p) => {
+          if (p === '...') {
+            html += `<span class="table-page-ellipsis">&hellip;</span>`;
+          } else {
+            html += `
+              <button type="button" class="table-page-btn table-page-num ${p === currentPage ? 'active' : ''}" data-page="${p}">
+                ${p}
+              </button>
+            `;
+          }
+        });
+
+        // Next Button
+        html += `
+          <button type="button" class="table-page-btn table-page-next" ${currentPage === totalPages ? 'disabled' : ''} aria-label="Next Page">
+            Next &rsaquo;
+          </button>
+        `;
+
+        html += `</div>`;
+      }
+
+      paginationBar.innerHTML = html;
+
+      // Attach Page Size Change Handler
+      const selectEl = paginationBar.querySelector('.table-page-size-select');
+      if (selectEl) {
+        selectEl.addEventListener('change', (e) => {
+          const val = e.target.value;
+          pageSize = val === 'all' ? 'all' : parseInt(val, 10);
+          currentPage = 1;
+          renderRows(false);
+        });
+      }
+
+      // Attach Page Button Click Handlers
+      paginationBar.querySelectorAll('.table-page-num').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetP = parseInt(btn.getAttribute('data-page'), 10);
+          if (targetP && targetP !== currentPage) {
+            currentPage = targetP;
+            renderRows(true);
+          }
+        });
+      });
+
+      const prevBtn = paginationBar.querySelector('.table-page-prev');
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            renderRows(true);
+          }
+        });
+      }
+
+      const nextBtn = paginationBar.querySelector('.table-page-next');
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderRows(true);
+          }
+        });
+      }
+    }
+
+    function renderRows(shouldScrollToTable = false) {
+      const q = searchQuery.trim().toLowerCase();
+      const tFilter = therapeuticFilter.trim().toLowerCase();
+
+      const filtered = categoryProducts.filter((p) => {
+        // Therapeutic category filter match
+        const matchTherapeutic =
+          tFilter === 'all' ||
+          (p.therapeutic && p.therapeutic.toLowerCase().includes(tFilter));
+
+        if (!matchTherapeutic) return false;
+
+        // Search text match
+        if (!q) return true;
+        return (
+          (p.name && p.name.toLowerCase().includes(q)) ||
+          (p.cas && p.cas.toLowerCase().includes(q)) ||
+          (p.hsn && p.hsn.toLowerCase().includes(q)) ||
+          (p.therapeutic && p.therapeutic.toLowerCase().includes(q)) ||
+          (p.grade && p.grade.toLowerCase().includes(q)) ||
+          (p.description && p.description.toLowerCase().includes(q))
+        );
+      });
+
+      const isAll = pageSize === 'all';
+      const effectivePageSize = isAll ? filtered.length : pageSize;
+      const totalPages = isAll ? 1 : Math.max(1, Math.ceil(filtered.length / effectivePageSize));
+
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIdx = isAll ? 0 : (currentPage - 1) * effectivePageSize;
+      const endIdx = isAll ? filtered.length : Math.min(startIdx + effectivePageSize, filtered.length);
+      const pageItems = filtered.slice(startIdx, endIdx);
+
+      // Update Top Count Badge
+      if (countBadge) {
+        const filterSuffix = tFilter !== 'all' ? ` in ${therapeuticFilter}` : '';
+        countBadge.innerHTML = `<span class="table-count-dot"></span> Showing <strong>${filtered.length ? `${startIdx + 1}–${endIdx}` : 0}</strong> of <strong>${filtered.length}</strong> Products${filterSuffix}`;
+      }
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 40px 20px; color: var(--muted-text);">
+              <div style="font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">No matching products found</div>
+              <p style="font-size: 0.84rem; margin: 0 0 14px 0;">Try searching by different keywords, CAS numbers, or pharmacopoeial grades.</p>
+              <button type="button" class="btn btn-outline-gold btn-sm" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('all');">Reset Therapeutic Filter</button>
+            </td>
+          </tr>
+        `;
+        renderPagination(0);
+        return;
+      }
+
+      tbody.innerHTML = pageItems.map((p) => `
+        <tr>
+          <td class="prod-name-cell">
+            <strong>${escapeHtml(p.name)}</strong>
+          </td>
+          <td>
+            <span class="cas-badge">${escapeHtml(p.cas)}</span>
+          </td>
+          <td>
+            <span class="hsn-badge">${escapeHtml(p.hsn || '29339900')}</span>
+          </td>
+          <td>
+            <span class="therapeutic-cell-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex-shrink:0;">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+              ${escapeHtml(p.therapeutic)}
+            </span>
+          </td>
+          <td>
+            <span class="grade-tag">${escapeHtml(p.grade)}</span>
+          </td>
+          <td>
+            <span class="purity-tag">${escapeHtml(p.purity || '≥ 99.0%')}</span>
+          </td>
+          <td>
+            <button type="button" class="btn btn-gold btn-sm" data-open-quote="${escapeHtml(p.name)} (CAS: ${escapeHtml(p.cas)})">
+              Instant RFQ
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+      // Bind instant quote button events
+      tbody.querySelectorAll('[data-open-quote]').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetProduct = btn.getAttribute('data-open-quote');
+          if (typeof window.openQuoteModal === 'function') {
+            window.openQuoteModal(targetProduct);
+          }
+        });
+      });
+
+      // Render bottom pagination controls
+      renderPagination(filtered.length);
+
+      // Smooth scroll back to table top if user clicked next/prev/page and table is scrolled out of view
+      if (shouldScrollToTable) {
+        const rect = container.getBoundingClientRect();
+        if (rect.top < 60 || rect.top > window.innerHeight) {
+          const scrollTarget = window.pageYOffset + rect.top - 120;
+          window.scrollTo({ top: Math.max(0, scrollTarget), behavior: 'smooth' });
+        }
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        currentPage = 1; // Reset to page 1 on new search
+        if (clearBtn) {
+          clearBtn.style.display = searchQuery.length > 0 ? 'inline-flex' : 'none';
+        }
+        renderRows(false);
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          searchQuery = '';
+          currentPage = 1;
+          clearBtn.style.display = 'none';
+          renderRows(false);
+        }
+      });
+    }
+
+    renderRows(false);
   });
 }
 

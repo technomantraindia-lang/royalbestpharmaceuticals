@@ -23,7 +23,7 @@
 <body>
 
   <!-- ==========================================================================
-       1. TOP UTILITY BAR
+       1. TOP UTILITY BAR (Clean, Unified Pharma Header)
        ========================================================================== -->
   <div class="top-utility-bar">
     <div class="container topbar-wrapper">
@@ -41,7 +41,7 @@
           </svg>
           <a href="tel:+919638169289">+91 96381 69289</a>
         </div>
-        <div class="topbar-item">
+        <div class="topbar-item topbar-item-email">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
@@ -51,8 +51,25 @@
       </div>
 
       <div class="topbar-right">
-        <span class="compliance-badge"><span class="pulse-indicator"></span> WHO-GMP Standard</span>
-        <span class="compliance-badge"><span class="pulse-indicator"></span> Global B2B Supply</span>
+        <div class="topbar-compliance-item" title="FDCA Gujarat Drug Licence No. (Form 20B & 21B)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          <span>Drug Lic: <strong>GJ-VAL-270384 &bull; 270385</strong></span>
+        </div>
+        <div class="topbar-compliance-item">
+          <span class="pulse-indicator"></span>
+          <span>WHO-GMP Certified</span>
+        </div>
+        <a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank" class="topbar-catalog-btn" title="Download Official Master Catalog PDF">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Catalog (PDF)</span>
+        </a>
       </div>
     </div>
   </div>
@@ -96,6 +113,24 @@
                     </div>
                   </div>
                   <span class="item-count">180+ Items</span>
+                </a>
+              </li>
+              <li class="dropdown-item">
+                <a href="steroids.html">
+                  <div class="dd-item-left">
+                    <div class="dd-icon-box">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                        <polyline points="2 17 12 22 22 17"/>
+                        <polyline points="2 12 12 17 22 12"/>
+                      </svg>
+                    </div>
+                    <div class="dd-item-text">
+                      <div class="dd-title">Steroids &amp; Corticosteroids</div>
+                      <div class="dd-desc">Betamethasone, Dexamethasone &amp; more</div>
+                    </div>
+                  </div>
+                  <span class="item-count">30+ Items</span>
                 </a>
               </li>
               <li class="dropdown-item">
@@ -165,6 +200,7 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item"><a href="contract-manufacturing.html" class="nav-link">Contract Manufacturing</a></li>
           <li class="nav-item"><a href="quality.html" class="nav-link">Quality</a></li>
           <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -212,125 +248,443 @@
          SECTION 1: CATEGORY TABS & HIGHLIGHTS
          ========================================================================== -->
     <section class="inner-page-section bg-white">
-      <div class="container">
+      <div class="container container-wide">
         <!-- Quick Category Switcher Tabs -->
         <div class="category-tabs-bar">
           <a href="products.html" class="cat-tab-btn">All Products</a>
           <a href="apis.html" class="cat-tab-btn active">Active APIs (180+)</a>
+          <a href="steroids.html" class="cat-tab-btn">Steroidal APIs &amp; Corticosteroids</a>
           <a href="intermediates.html" class="cat-tab-btn">Intermediates &amp; KSMs (50+)</a>
           <a href="sterile-products.html" class="cat-tab-btn">Sterile Compounds (50+)</a>
           <a href="culture-media.html" class="cat-tab-btn">Culture Media &amp; Plates (25+)</a>
+          <a href="contract-manufacturing.html" class="cat-tab-btn">Contract Mfg (Baddi)</a>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; margin-bottom: 40px;">
-          <div>
-            <div class="eyebrow">PHARMACOPOEIAL EXCELLENCE</div>
-            <h2 class="section-title">Certified High-Purity Bulk APIs</h2>
-            <p style="font-size: 0.95rem; color: var(--body-text); line-height: 1.7; margin-bottom: 14px;">
-              Royal Best Pharmaceuticals Pvt. Ltd. supplies a wide spectrum of Active Pharmaceutical Ingredients spanning major therapeutic classes: Analgesics, Antidiabetics, Antibiotics, Cardiovascular, Gastrointestinal, and Antihistamines.
-            </p>
-            <p style="font-size: 0.95rem; color: var(--body-text); line-height: 1.7;">
-              Every commercial consignment is accompanied by a batch-specific Certificate of Analysis (COA) detailing HPLC assay, related substances, particle size distribution (PSD), and heavy metals compliance.
-            </p>
+        <div class="page-visual-showcase">
+          <div class="visual-image-frame">
+            <img src="assets/images/cat-api-crystals.jpg" alt="High-purity pharmaceutical Active Pharmaceutical Ingredients crystalline structure" loading="lazy">
+            <div class="visual-image-badge">
+              <span class="badge-dot"></span>
+              <span>Pure API Crystals &bull; USP/EP</span>
+            </div>
           </div>
 
-          <div style="background: #081D30; border: 1px solid rgba(210, 166, 96, 0.35); border-radius: var(--radius-md); padding: 26px; color: #FFF; box-shadow: var(--shadow-card);">
-            <div style="font-size: 0.8rem; font-weight: 600; color: var(--gold-light); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">API COMPLIANCE HIGHLIGHTS</div>
-            <div style="font-size: 1.3rem; font-weight: 700; color: #FFF; margin-bottom: 14px;">Complete Dossier Support</div>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.86rem; color: rgba(255,255,255,0.85);">
-              <li>🔹 Open-Part Drug Master Files (DMF) Available</li>
-              <li>🔹 Impurity Profiling &amp; Nitrosamine Risk Assessments</li>
-              <li>🔹 ICH Q1A Stability Data (Zone II / IVb)</li>
-              <li>🔹 Fast Export Customs Clearance from JNPT Mumbai</li>
-            </ul>
+          <div class="visual-content-frame">
+            <div class="eyebrow">PHARMACOPOEIAL EXCELLENCE &bull; 175+ ACTIVE MOLECULES</div>
+            <h2 class="visual-title">Certified High-Purity Bulk APIs with Therapeutic Classifications</h2>
+            <p class="visual-desc">
+              Royal Best Pharmaceuticals Pvt. Ltd. supplies a wide spectrum of Active Pharmaceutical Ingredients spanning major therapeutic classes: Antibiotics, Cardiovascular, Gastrointestinal, Analgesics &amp; NSAIDs, CNS &amp; Psychiatric, Antidiabetics, and Antifungals with full batch-specific COA and impurity profiling.
+            </p>
+            <div class="visual-highlights">
+              <div class="visual-highlight-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>Batch-Specific HPLC Assay, PSD &amp; Heavy Metal Compliance</span>
+              </div>
+              <div class="visual-highlight-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                <span>Complete Open-Part DMF &amp; ICH Q1A Stability Protocols</span>
+              </div>
+            </div>
+            <div class="visual-action-btns">
+              <a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20API%20Catalog%20with%20Categories%20(1).pdf" target="_blank" class="btn btn-gold btn-sm">
+                <span>Download Categorized API List (PDF)</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </a>
+              <button type="button" class="btn btn-outline-dark btn-sm" data-open-quote="Bulk APIs Portfolio Inquiry">
+                <span>Request API Quote</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
           </div>
+        </div>
+
+        <!-- Official Category PDF Download Strip -->
+        <div class="cat-download-banner">
+          <div class="cat-download-left">
+            <div class="cat-download-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="cat-download-text">
+              <h4>Download Official API Catalogues with Therapeutic Categories</h4>
+              <p>Direct official technical catalogs in PDF format containing all CAS numbers, grades, and therapeutic indications.</p>
+            </div>
+          </div>
+          <div class="cat-download-buttons">
+            <a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20API%20Catalog%20with%20Categories%20(1).pdf" target="_blank" class="btn btn-gold btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>API Catalog with Categories (PDF)</span>
+            </a>
+            <a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20Section%20IV%20Catalog%20(R%20to%20Z).pdf" target="_blank" class="btn btn-outline-white btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Section IV (R to Z) (PDF)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Therapeutic Category Feature Grid Matrix -->
+        <div style="margin-bottom: 20px;">
+          <div class="eyebrow">API THERAPEUTIC DIRECTORY</div>
+          <h3 style="font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 18px;">Browse Active APIs by Therapeutic Class</h3>
+        </div>
+
+        <div class="therapeutic-matrix-grid">
+          <!-- Card 1: Antibiotics & Antimicrobials -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">Antibiotics &amp; Antimicrobials</h4>
+            <div class="therapeutic-card-count">28+ Active Molecules</div>
+            <p class="therapeutic-card-desc">Cephalosporins, Macrolides, Fluoroquinolones, Aminoglycosides &amp; Oxazolidinones for infectious disease management.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Cefixime</span>
+              <span class="sample-tag">Ceftriaxone</span>
+              <span class="sample-tag">Azithromycin</span>
+              <span class="sample-tag">Linezolid</span>
+              <span class="sample-tag">Ciprofloxacin</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('Antibiotic');">
+              <span>View Antibiotics (28+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Card 2: Cardiovascular & Antihypertensives -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">Cardiovascular &amp; Antihypertensive</h4>
+            <div class="therapeutic-card-count">18+ Active Molecules</div>
+            <p class="therapeutic-card-desc">Angiotensin receptor blockers (ARBs), Beta-blockers, Statins, ACE inhibitors, and Calcium Channel Blockers.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Telmisartan</span>
+              <span class="sample-tag">Losartan</span>
+              <span class="sample-tag">Rosuvastatin</span>
+              <span class="sample-tag">Atorvastatin</span>
+              <span class="sample-tag">Enalapril</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('hypertensive');">
+              <span>View Cardiovascular (18+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Card 3: Analgesics, NSAIDs & Pain -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">Analgesics &amp; NSAIDs</h4>
+            <div class="therapeutic-card-count">16+ Active Molecules</div>
+            <p class="therapeutic-card-desc">Non-steroidal anti-inflammatory agents, COX-2 inhibitors, antipyretics, and targeted acute/chronic pain relief compounds.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Paracetamol</span>
+              <span class="sample-tag">Ibuprofen</span>
+              <span class="sample-tag">Diclofenac</span>
+              <span class="sample-tag">Aceclofenac</span>
+              <span class="sample-tag">Tramadol</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('NSAID');">
+              <span>View Analgesics &amp; NSAIDs (16+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Card 4: Gastrointestinal & PPIs -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2v7.31L4.89 18.27A2 2 0 0 0 6.64 21h10.72a2 2 0 0 0 1.75-2.73L14 9.31V2"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">Gastrointestinal &amp; PPIs</h4>
+            <div class="therapeutic-card-count">14+ Active Molecules</div>
+            <p class="therapeutic-card-desc">Substituted benzimidazole proton pump inhibitors, H2 antagonists, antiemetics, gastroprotectants, and prokinetics.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Pantoprazole</span>
+              <span class="sample-tag">Omeprazole</span>
+              <span class="sample-tag">Esomeprazole</span>
+              <span class="sample-tag">Rabeprazole</span>
+              <span class="sample-tag">Sucralfate</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('Inhibitor (Antacid)');">
+              <span>View Gastrointestinal (14+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Card 5: CNS & Psychiatric -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 3"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">CNS &amp; Neuro-Psychiatric</h4>
+            <div class="therapeutic-card-count">20+ Active Molecules</div>
+            <p class="therapeutic-card-desc">Anticonvulsants, mood stabilizers, SSRI/SNRI antidepressants, atypical antipsychotics, and nootropics.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Levetiracetam</span>
+              <span class="sample-tag">Sertraline</span>
+              <span class="sample-tag">Carbamazepine</span>
+              <span class="sample-tag">Gabapentin</span>
+              <span class="sample-tag">Olanzapine</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('Antidepressant');">
+              <span>View CNS &amp; Psychiatric (20+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Card 6: Antidiabetic & Metabolic -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">Antidiabetic &amp; Metabolic</h4>
+            <div class="therapeutic-card-count">8+ Active Molecules</div>
+            <p class="therapeutic-card-desc">DPP-4 inhibitors, Alpha-glucosidase inhibitors, Biguanides, and Thiazolidinediones for glycemic control.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Sitagliptin</span>
+              <span class="sample-tag">Linagliptin</span>
+              <span class="sample-tag">Teneligliptin</span>
+              <span class="sample-tag">Pioglitazone</span>
+              <span class="sample-tag">Metformin</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('Anti-diabetic');">
+              <span>View Antidiabetics (8+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Card 7: Respiratory & Mucolytics -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">Respiratory &amp; Mucolytics</h4>
+            <div class="therapeutic-card-count">10+ Active Molecules</div>
+            <p class="therapeutic-card-desc">Bronchodilators, mucolytics, secretolytics, expectorants, and beta-2 agonists for asthma, bronchitis, and COPD.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Ambroxol</span>
+              <span class="sample-tag">Acebrophylline</span>
+              <span class="sample-tag">Doxophylline</span>
+              <span class="sample-tag">Salbutamol</span>
+              <span class="sample-tag">Bromhexine</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('Bronchodilator');">
+              <span>View Respiratory (10+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Card 8: Antifungals & Specialty -->
+          <article class="therapeutic-matrix-card">
+            <div class="therapeutic-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <h4 class="therapeutic-card-title">Antifungals, Antivirals &amp; Specialty</h4>
+            <div class="therapeutic-card-count">18+ Active Molecules</div>
+            <p class="therapeutic-card-desc">Triazoles, Imidazoles, Antiretrovirals (NRTI/NNRTI), Antineoplastics, and Immunosuppressive oncology APIs.</p>
+            <div class="therapeutic-sample-tags">
+              <span class="sample-tag">Fluconazole</span>
+              <span class="sample-tag">Itraconazole</span>
+              <span class="sample-tag">Terbinafine</span>
+              <span class="sample-tag">Capecitabine</span>
+              <span class="sample-tag">Imatinib</span>
+            </div>
+            <button type="button" class="therapeutic-card-btn" onclick="if(window.filterByTherapeuticCategory) window.filterByTherapeuticCategory('fungal');">
+              <span>View Antifungals &amp; Specialty (18+)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </article>
         </div>
 
         <!-- Technical Specification Table of Featured APIs -->
-        <div class="spec-table-card">
-          <div style="padding: 18px 24px; background: #FAFBFB; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--dark-text);">Key Commercial APIs Specification Matrix</h3>
-            <span style="font-size: 0.8rem; color: var(--muted-text);">Standard Export Packaging: 25 Kg Fibre Drums</span>
+        <div class="spec-table-card" data-category-table="apis">
+          <div class="spec-table-header">
+            <div class="spec-table-info">
+              <h3 class="spec-table-title">Active Pharmaceutical Ingredients (APIs) Master Matrix</h3>
+              <p class="spec-table-subtitle">Standard Export Packaging: 25 Kg HDPE / Fibre Drums with Double Polyliners &bull; Complete Therapeutic Class Directory</p>
+            </div>
+            <div class="spec-table-actions">
+              <!-- Live Search Input -->
+              <div class="table-search-group">
+                <span class="table-search-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <input type="text" class="table-search-input" id="apisSearchInput" placeholder="Search API name, CAS, HSN, or therapeutic category..." aria-label="Search APIs">
+                <button type="button" class="table-search-clear" id="apisClearBtn" style="display: none;" aria-label="Clear Search">&times;</button>
+              </div>
+              <span class="table-count-badge" id="apisCountBadge">
+                <span class="table-count-dot"></span> Showing <strong>All</strong> APIs
+              </span>
+              <a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20API%20Catalog%20with%20Categories%20(1).pdf" target="_blank" class="btn btn-sm btn-outline-gold" style="font-size: 0.78rem; padding: 7px 12px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </div>
           </div>
+
+          <!-- Interactive Therapeutic Category Filter Pills -->
+          <div style="padding: 16px 24px; background: #F8FAFC; border-bottom: 1px solid #EEF2F6;">
+            <div class="therapeutic-filter-header" style="margin-bottom: 8px;">
+              <span class="therapeutic-filter-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                </svg>
+                Filter by Therapeutic Category:
+              </span>
+            </div>
+            <div class="therapeutic-pills-container">
+              <button type="button" class="therapeutic-pill-btn active" data-therapeutic-filter="all">
+                <span>All Categories (175+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Antibiotic">
+                <span>Antibiotics (28+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="hypertensive">
+                <span>Cardiovascular / ARBs (18+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="NSAID">
+                <span>NSAIDs &amp; Analgesics (16+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Inhibitor (Antacid)">
+                <span>Gastrointestinal / PPIs (14+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Antidepressant">
+                <span>CNS / Antidepressants (20+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Anti-diabetic">
+                <span>Antidiabetic (8+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Bronchodilator">
+                <span>Respiratory &amp; Mucolytic (10+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="fungal">
+                <span>Antifungals (8+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Antiretroviral">
+                <span>Antiretroviral / Antiviral (4+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Antihistamine">
+                <span>Antihistamines (8+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Anticoagulant">
+                <span>Anticoagulants (4+)</span>
+              </button>
+              <button type="button" class="therapeutic-pill-btn" data-therapeutic-filter="Antineoplastic">
+                <span>Oncology / Taxane (4+)</span>
+              </button>
+            </div>
+          </div>
+
           <div class="table-responsive">
             <table class="pharma-data-table">
               <thead>
                 <tr>
                   <th>Product Name</th>
                   <th>CAS Number</th>
+                  <th>HSN Code</th>
                   <th>Therapeutic Category</th>
                   <th>Pharmacopoeial Grade</th>
                   <th>Assay Purity</th>
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Paracetamol (Acetaminophen)</strong></td>
-                  <td><span class="cas-badge">103-90-2</span></td>
-                  <td>Analgesic / Antipyretic</td>
-                  <td><span class="grade-tag">USP / BP / IP / EP</span></td>
-                  <td>≥ 99.8%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Paracetamol (CAS 103-90-2)">Request Quote</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Metformin Hydrochloride</strong></td>
-                  <td><span class="cas-badge">1115-70-4</span></td>
-                  <td>Antidiabetic (Biguanide)</td>
-                  <td><span class="grade-tag">USP / BP / IP</span></td>
-                  <td>≥ 99.5%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Metformin HCl (CAS 1115-70-4)">Request Quote</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Amoxicillin Trihydrate</strong></td>
-                  <td><span class="cas-badge">61336-70-7</span></td>
-                  <td>Broad-Spectrum Penicillin</td>
-                  <td><span class="grade-tag">USP / BP / IP</span></td>
-                  <td>≥ 98.5%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Amoxicillin Trihydrate (CAS 61336-70-7)">Request Quote</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Ciprofloxacin Hydrochloride</strong></td>
-                  <td><span class="cas-badge">86393-32-0</span></td>
-                  <td>Fluoroquinolone Antibacterial</td>
-                  <td><span class="grade-tag">USP / EP / IP</span></td>
-                  <td>≥ 99.0%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Ciprofloxacin HCl (CAS 86393-32-0)">Request Quote</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Azithromycin Dihydrate</strong></td>
-                  <td><span class="cas-badge">117772-70-0</span></td>
-                  <td>Macrolide Antibiotic</td>
-                  <td><span class="grade-tag">USP / EP / IP</span></td>
-                  <td>≥ 98.0%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Azithromycin Dihydrate (CAS 117772-70-0)">Request Quote</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Omeprazole / Pantoprazole</strong></td>
-                  <td><span class="cas-badge">73590-58-6</span></td>
-                  <td>Proton Pump Inhibitor (PPI)</td>
-                  <td><span class="grade-tag">USP / BP / IP</span></td>
-                  <td>≥ 99.2%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Omeprazole (CAS 73590-58-6)">Request Quote</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Cetirizine Dihydrochloride</strong></td>
-                  <td><span class="cas-badge">83881-52-1</span></td>
-                  <td>Antihistamine / Antiallergic</td>
-                  <td><span class="grade-tag">USP / BP / EP</span></td>
-                  <td>≥ 99.4%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Cetirizine 2HCl (CAS 83881-52-1)">Request Quote</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Atorvastatin Calcium Trihydrate</strong></td>
-                  <td><span class="cas-badge">134523-03-8</span></td>
-                  <td>Cardiovascular (HMG-CoA Reductase)</td>
-                  <td><span class="grade-tag">USP / EP / IP</span></td>
-                  <td>≥ 99.0%</td>
-                  <td><button class="btn btn-gold btn-sm" data-open-quote="Atorvastatin Calcium (CAS 134523-03-8)">Request Quote</button></td>
-                </tr>
+              <tbody id="apisTableBody">
+                <!-- Dynamically populated from products-data.js with all active APIs -->
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         API MANUFACTURING & ASSAY TESTING GALLERY
+         ========================================================================== -->
+    <section class="facility-gallery-section">
+      <div class="container container-wide">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+          <div class="eyebrow">API PRODUCTION &amp; QUALITY STANDARDS</div>
+          <h3 class="section-title" style="font-size: 1.85rem;">Dedicated API Synthesis &amp; Testing Ecosystem</h3>
+          <p class="section-subtitle" style="margin-bottom: 0;">
+            Precision synthesis, rigorous analytical assay validation, and export packaging ensuring international compliance.
+          </p>
+        </div>
+
+        <div class="facility-gallery-grid">
+          <!-- Card 1 -->
+          <div class="facility-photo-card">
+            <div class="facility-photo-thumb">
+              <img src="assets/images/synthesis-facility.jpg" alt="Commercial chemical synthesis reactor vessels for active pharmaceutical ingredients" loading="lazy">
+              <span class="facility-photo-tag">Synthesis Reactors</span>
+            </div>
+            <div class="facility-photo-body">
+              <h4 class="facility-photo-title">High-Capacity Reaction Vessels</h4>
+              <p class="facility-photo-desc">Glass-lined and stainless steel reactor trains supporting complex multi-step organic synthesis and crystallization.</p>
+              <div class="facility-photo-specs">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>5,000L - 10,000L Reactor Capacity</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="facility-photo-card">
+            <div class="facility-photo-thumb">
+              <img src="assets/images/hero-scientist.jpg" alt="Senior Research Scientist performing HPLC Chromatographic Purity Testing for Active Pharmaceutical Ingredients" loading="lazy">
+              <span class="facility-photo-tag">Analytical Assay</span>
+            </div>
+            <div class="facility-photo-body">
+              <h4 class="facility-photo-title">Chromatographic Impurity Profiling</h4>
+              <p class="facility-photo-desc">Validated HPLC and GC analytical methods to ensure assay consistency, low residual solvents, and absence of genotoxic impurities.</p>
+              <div class="facility-photo-specs">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>HPLC / GC-MS / FTIR Verification</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="facility-photo-card">
+            <div class="facility-photo-thumb">
+              <img src="assets/images/warehouse-logistics.jpg" alt="Sealed export-grade packaging and temperature controlled warehouse" loading="lazy">
+              <span class="facility-photo-tag">Export Packaging</span>
+            </div>
+            <div class="facility-photo-body">
+              <h4 class="facility-photo-title">Climate-Controlled Bulk Storage</h4>
+              <p class="facility-photo-desc">Tamper-evident, double polyethylene-lined fiber drums with nitrogen flushing and silica desiccant protections.</p>
+              <div class="facility-photo-specs">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>UN-Certified Bulk Packaging</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -442,6 +796,7 @@
               <span class="footer-badge"><span class="footer-badge-dot"></span> ISO 9001:2015</span>
               <span class="footer-badge"><span class="footer-badge-dot"></span> DMF Ready</span>
               <span class="footer-badge"><span class="footer-badge-dot"></span> COA &amp; MSDS</span>
+              <span class="footer-badge"><span class="footer-badge-dot"></span> Export Quality</span>
             </div>
           </div>
 
@@ -453,9 +808,11 @@
             </h4>
             <ul class="footer-col-links">
               <li><a href="apis.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Active APIs (180+)</a></li>
+              <li><a href="steroids.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Steroids &amp; Corticosteroids</a></li>
               <li><a href="intermediates.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Pharma Intermediates &amp; KSMs</a></li>
               <li><a href="sterile-products.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Sterile Compounds &amp; Vials</a></li>
               <li><a href="culture-media.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Microbiology Culture Media</a></li>
+              <li><a href="contract-manufacturing.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Contract Manufacturing (Baddi)</a></li>
               <li><a href="products.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>All Product Portfolios</a></li>
             </ul>
           </div>
@@ -468,9 +825,9 @@
             </h4>
             <ul class="footer-col-links">
               <li><a href="about.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>About Our Company</a></li>
+              <li><a href="contract-manufacturing.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Contract Manufacturing (Baddi)</a></li>
               <li><a href="quality.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Quality Assurance &amp; QC</a></li>
               <li><a href="quality.html#compliance"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>DMF Regulatory Support</a></li>
-              <li><a href="about.html#facility"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Vapi Manufacturing Facility</a></li>
               <li><a href="contact.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Contact Corporate Office</a></li>
             </ul>
           </div>
@@ -483,10 +840,10 @@
             </h4>
             <ul class="footer-col-links">
               <li><a href="resources.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Download Catalogues</a></li>
-              <li><a href="pdfs/Royal%20Best%20Pharmaceuticals%20Product%20Catalog%20with%20CAS%20Numbers%20(1).pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Complete Catalog (PDF)</a></li>
-              <li><a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Intermediates &amp; Media List</a></li>
+              <li><a href="pdfs/pdf%202/Royal%20Best%20Pharmaceuticals%20API%20Catalog%20with%20Categories%20(1).pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>API Catalog with Categories (PDF)</a></li>
+              <li><a href="pdfs/Royal%20best%20Product%20List%20&%20IntermediatesMedia%20Plates.pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Master Catalog (PDF)</a></li>
+              <li><a href="pdfs/Royal%20Best%20Pharmaceuticals%20Product%20Catalog%20with%20CAS%20Numbers%20(1).pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>CAS Technical Catalog (PDF)</a></li>
               <li><a href="#" data-open-quote><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Request COA / Price Quote</a></li>
-              <li><a href="quality.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>Pharmacopoeial Compliance</a></li>
             </ul>
           </div>
 
@@ -539,6 +896,20 @@
                   <a href="mailto:info@royalbestpharmaceutical.in" class="contact-link alt-email">info@royalbestpharmaceutical.in</a>
                 </div>
               </div>
+
+              <!-- Drug Licence Item -->
+              <div class="footer-contact-row">
+                <div class="footer-contact-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="m9 12 2 2 4-4"/>
+                  </svg>
+                </div>
+                <div class="footer-contact-details">
+                  <span class="contact-label">Drug Licence No. (FDCA Gujarat)</span>
+                  <p class="contact-text"><strong>20B:</strong> GJ-VAL-270384 &nbsp;|&nbsp; <strong>21B:</strong> GJ-VAL-270385</p>
+                </div>
+              </div>
             </div>
 
             <button type="button" class="footer-rfq-quick-btn" data-open-quote>
@@ -557,7 +928,7 @@
     <div class="footer-bottom-bar">
       <div class="container footer-bottom-container">
         <div class="footer-copy-text">
-          &copy; 2026 <strong>Royal Best Pharmaceuticals Pvt. Ltd.</strong> All Rights Reserved. WHO-GMP &amp; ISO 9001:2015 Certified.
+          &copy; 2026 <strong>Royal Best Pharmaceuticals Pvt. Ltd.</strong> All Rights Reserved. &bull; WHO-GMP &amp; ISO 9001:2015 Certified.
         </div>
         <div class="footer-bottom-links">
           <a href="about.html">Privacy Policy</a>
@@ -626,5 +997,28 @@
   <!-- Scripts -->
   <script src="js/products-data.js"></script>
   <script src="js/main.js"></script>
+  <!-- Floating Contact Actions: Call (Left) & WhatsApp (Right) - Icon Only -->
+  <div class="floating-contact-actions" aria-label="Quick Contact Actions">
+    <!-- 1. Left: Call Button -->
+    <a href="tel:+919638169289" class="floating-btn floating-call-btn" id="floatingCallBtn" aria-label="Call Royal Best Pharmaceuticals" title="Call Now: +91 96381 69289">
+      <div class="floating-pulse-ring"></div>
+      <span class="floating-btn-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- 2. Right: WhatsApp Button (Official Standard Vector) -->
+    <a href="https://wa.me/919638169289?text=Hello%20Royal%20Best%20Pharmaceuticals%2C%20I%20would%20like%20to%20inquire%20about%20your%20products" target="_blank" rel="noopener noreferrer" class="floating-btn floating-whatsapp-btn" id="floatingWhatsAppBtn" aria-label="Chat on WhatsApp" title="Chat on WhatsApp: +91 96381 69289">
+      <div class="floating-pulse-ring"></div>
+      <span class="floating-btn-icon">
+        <svg width="30" height="30" viewBox="0 0 448 512" fill="#FFFFFF" aria-hidden="true">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+
 </body>
 </html>
