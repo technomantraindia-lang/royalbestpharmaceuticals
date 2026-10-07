@@ -1,0 +1,21 @@
+{
+  "name": "royalbestpharmaceutical-website",
+  "version": "1.0.0",
+  "description": "> Premier API Trader, Exporter & Global Sourcing Partner for Active Pharmaceutical Ingredients (APIs), Corticosteroids, Pharmaceutical Intermediates, Sterile Compounds, Ready-to-Use Culture Media Plates, and Third-Party Contract Formulation Manufacturing (Baddi & Maharashtra).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technomantraindia-lang/royalbestpharmaceuticals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/technomantraindia-lang/royalbestpharmaceuticals/issues"
+  },
+  "homepage": "https://github.com/technomantraindia-lang/royalbestpharmaceuticals#readme"
+}

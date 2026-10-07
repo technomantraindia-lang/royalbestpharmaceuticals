@@ -19,11 +19,12 @@
 
 ## 🚀 Quality & Certifications
 
-- **FDCA Gujarat Drug Licences**: Form 20B (`GJ-VAL-270384`) & Form 21B (`GJ-VAL-270385`)
+- **FDCA Gujarat Drug Licences**: Form 20B (`20B - 270***`) & Form 21B (`21B - 270***`)
+- **Corporate & Tax Registrations**: CIN NO Registered (MCA India) & GST NO (Gujarat State Code: 24)
 - **WHO-GMP** & **ISO 9001:2015** Compliant Operations
 - Fully validated analytical testing (HPLC, GC-MS, FTIR, Impurity Profiling)
 - Complete Technical COA, MSDS, and DMF regulatory documentation support
-- Master Product Catalogue DGB 2026 Edition aligned with CAS & HSN classification
+- Royal Best Master Products List (2026 Edition) aligned with CAS & HSN classification
 
 ## 🛠️ Technology Stack
 
