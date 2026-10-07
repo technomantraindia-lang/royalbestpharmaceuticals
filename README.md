@@ -26,11 +26,40 @@
 - Complete Technical COA, MSDS, and DMF regulatory documentation support
 - Royal Best Master Products List (2026 Edition) aligned with CAS & HSN classification
 
-## 🛠️ Technology Stack
+## 🛠️ Technology & Live Optimization Architecture
 
-- Semantic HTML5 with dynamic schema & SEO metadata
-- Vanilla CSS with responsive layout & luxury executive styling
-- Vanilla JavaScript with dynamic 3D globe visualization, real-time catalogue filter engine, and interactive RFQ modal
+- **Semantic HTML5 & Complete SEO Suite**:
+  - Full OpenGraph (`og:*`) & Twitter Cards (`twitter:*`) on all 12 pages for crisp social/WhatsApp previews
+  - Canonical URLs (`<link rel="canonical">`) and Schema.org JSON-LD structured data (`Organization`, `MedicalBusiness`, `WebPage`)
+  - Automated `sitemap.xml` (all 12 pages indexed) & `robots.txt`
+  - Custom branded `404.html` error page with quick directory shortcuts
+  - Progressive Web App `site.webmanifest` with theme colors and home-screen icons
+- **Performance & Asset Optimization**:
+  - Image optimization (mozjpeg progressive compression) saving 16.63 MB (78.2% reduction from 21.28 MB down to 4.65 MB)
+  - Below-the-fold image lazy loading (`loading="lazy"`) and asynchronous decoding (`decoding="async"`)
+  - Above-the-fold hero logo priority loading (`fetchpriority="high"`)
+  - Video stream optimization (`preload="metadata"` for slide 1, `preload="none"` on-demand loading for slides 2 & 3)
+  - Three.js 3D Interactive Earth Globe GPU/Battery optimization via `IntersectionObserver` (pauses render loop when scrolled off-screen)
+- **100% Mobile & Tablet Responsiveness**:
+  - Tablet & iPad navigation fix: Smooth hamburger drawer active up to `992px`
+  - Animated Hamburger-to-X transition with full touch backdrop overlay and body scroll locking
+  - Zero horizontal overflow (`overflow-x: hidden`) across mobile screens (320px - 768px)
+  - Horizontal touch momentum scroll on technical specification tables (`.table-responsive`) with visual scroll cue
+  - Quick contact floating buttons (Call on left, WhatsApp on right) with mobile safe-area inset support
+
+## 💻 Local Testing & Serving
+```bash
+# Serve locally
+npm start
+# or
+node scratch/dev-server.js
+
+# Validate all internal links & PDF paths
+npm run validate:links
+
+# Validate SEO & meta tags
+npm run validate:meta
+```
 
 ---
 

@@ -1,0 +1,22 @@
+{
+  "name": "Royal Best Pharmaceuticals Pvt. Ltd.",
+  "short_name": "Royal Best Pharma",
+  "description": "Premier API Trader, Exporter & Global Sourcing Partner for Active Pharmaceutical Ingredients, Corticosteroids, Intermediates, Sterile Compounds, and Microbiology Supply.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#071B2C",
+  "theme_color": "#071B2C",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/royal-best-logo.jpg",
+      "sizes": "611x611",
+      "type": "image/jpeg"
+    }
+  ]
+}

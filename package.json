@@ -4,7 +4,10 @@
   "description": "> Premier API Trader, Exporter & Global Sourcing Partner for Active Pharmaceutical Ingredients (APIs), Corticosteroids, Pharmaceutical Intermediates, Sterile Compounds, Ready-to-Use Culture Media Plates, and Third-Party Contract Formulation Manufacturing (Baddi & Maharashtra).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node scratch/dev-server.js",
+    "serve": "node scratch/dev-server.js",
+    "validate:links": "node scratch/check-links.js",
+    "validate:meta": "node scratch/check-meta.js"
   },
   "repository": {
     "type": "git",

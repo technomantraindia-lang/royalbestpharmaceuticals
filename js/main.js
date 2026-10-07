@@ -51,22 +51,60 @@ function initMobileNav() {
   const navMenu = document.getElementById('navLinksMenu');
 
   if (toggleBtn && navMenu) {
-    toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+    // Inject mobile backdrop if not present
+    let backdrop = document.querySelector('.mobile-nav-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'mobile-nav-backdrop';
+      document.body.appendChild(backdrop);
+    }
+
+    const openMenu = () => {
+      navMenu.classList.add('active');
+      toggleBtn.classList.add('active');
+      backdrop.classList.add('active');
+      document.body.classList.add('nav-open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      navMenu.classList.remove('active');
+      toggleBtn.classList.remove('active');
+      backdrop.classList.remove('active');
+      document.body.classList.remove('nav-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (navMenu.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
     });
 
     // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target) && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
+        closeMenu();
       }
     });
 
-    // Close when clicking a regular navigation link or dropdown item on mobile
+    // Close when clicking a navigation link or dropdown item on mobile
     navMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 992) {
-          navMenu.classList.remove('active');
+          closeMenu();
         }
       });
     });
@@ -1035,6 +1073,9 @@ function initHeroSlider() {
       if (video) {
         if (isActive) {
           try {
+            if (video.readyState === 0) {
+              video.load();
+            }
             video.currentTime = 0;
             const playPromise = video.play();
             if (playPromise !== undefined) {
@@ -1588,8 +1629,15 @@ function init3DGlobe() {
   let velocityY = 0;
   let activeRegion = 'all';
 
+  let isGlobeInView = true;
+  let animFrameId = null;
+
   function animate() {
-    requestAnimationFrame(animate);
+    if (!isGlobeInView) {
+      animFrameId = null;
+      return;
+    }
+    animFrameId = requestAnimationFrame(animate);
 
     // Clouds rotate independently slightly faster for dynamic realism
     cloudMesh.rotation.y += 0.0007;
@@ -1666,6 +1714,19 @@ function init3DGlobe() {
     });
 
     renderer.render(scene, camera);
+  }
+
+  // Optimize CPU/Battery by pausing render loop when globe is off-screen
+  if ('IntersectionObserver' in window) {
+    const globeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isGlobeInView = entry.isIntersecting;
+        if (isGlobeInView && !animFrameId) {
+          animate();
+        }
+      });
+    }, { rootMargin: '100px 0px', threshold: 0.01 });
+    globeObserver.observe(container);
   }
 
   animate();

@@ -70,6 +70,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -78,8 +81,38 @@ body {
   background-color: var(--light-bg);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.nav-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+.mobile-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(4, 18, 30, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9988;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-nav-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 img {
@@ -8559,20 +8592,17 @@ button, input, select, textarea {
 
 /* Mobile Floating Buttons adjustments */
 @media (max-width: 640px) {
+  .floating-contact-actions {
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    padding: 0 14px;
+  }
   .floating-btn {
-    bottom: 18px;
     width: 48px;
     height: 48px;
   }
-  .floating-call-btn {
-    left: 16px;
-  }
-  .floating-whatsapp-btn {
-    right: 16px;
-  }
 }
 
-/* Header & Mobile Nav Drawer */
+/* Header & Mobile Nav Drawer (Tablets & Mobile: up to 992px) */
 @media (max-width: 992px) {
   .site-header {
     height: 74px;
@@ -8591,6 +8621,31 @@ button, input, select, textarea {
     padding: 8px 14px;
     font-size: 0.78rem;
   }
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 9995;
+  }
+  .mobile-toggle.active {
+    border-color: var(--gold);
+    background: rgba(210, 166, 96, 0.12);
+  }
+  .mobile-toggle.active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .mobile-toggle.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
   
   /* Mobile Navigation Menu Drawer */
   .nav-links {
@@ -8602,7 +8657,7 @@ button, input, select, textarea {
     background: #071B2C;
     flex-direction: column;
     align-items: stretch;
-    padding: 24px 20px 80px 20px;
+    padding: 20px 18px 80px 18px;
     gap: 6px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -8636,8 +8691,10 @@ button, input, select, textarea {
     border-color: var(--gold);
     color: var(--gold-light);
   }
+  .dropdown-menu,
   .nav-dropdown {
     position: static;
+    width: 100%;
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -8651,23 +8708,38 @@ button, input, select, textarea {
     flex-direction: column;
     gap: 4px;
   }
+  .dropdown-item {
+    width: 100%;
+  }
   .dropdown-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 9px 12px;
     border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #E2E8F0;
+    transition: all 0.2s ease;
   }
   .dropdown-item a:hover {
-    background: rgba(210, 166, 96, 0.12);
+    background: rgba(210, 166, 96, 0.15);
+    color: var(--gold-light);
   }
   .dd-title {
     color: #FFFFFF;
     font-size: 0.88rem;
+    font-weight: 600;
   }
   .dd-desc {
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     color: #94A3B8;
   }
   .item-count {
     font-size: 0.72rem;
+    color: var(--gold-light);
+    background: rgba(210, 166, 96, 0.15);
+    padding: 2px 7px;
+    border-radius: 10px;
   }
 }
 
